@@ -1,9 +1,9 @@
 using AutoFixture;
+using FluentAssertions;
+using NUnit.Framework;
 using ResidentVulnerabilitiesApi.Tests.V1.Helper;
 using ResidentVulnerabilitiesApi.V1.Domain;
 using ResidentVulnerabilitiesApi.V1.Gateways;
-using FluentAssertions;
-using NUnit.Framework;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.Gateways
 {

@@ -1,9 +1,9 @@
 using System.Net.Http;
-using ResidentVulnerabilitiesApi.V1.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Npgsql;
 using NUnit.Framework;
+using ResidentVulnerabilitiesApi.V1.Infrastructure;
 
 namespace ResidentVulnerabilitiesApi.Tests
 {

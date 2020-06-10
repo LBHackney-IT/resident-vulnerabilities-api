@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using ResidentVulnerabilitiesApi.V1.UseCase;
 using Microsoft.AspNetCore.Mvc;
+using ResidentVulnerabilitiesApi.V1.UseCase;
 
 namespace ResidentVulnerabilitiesApi.V1.Controllers
 {

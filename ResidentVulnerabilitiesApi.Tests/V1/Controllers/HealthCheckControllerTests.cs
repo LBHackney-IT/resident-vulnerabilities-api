@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using ResidentVulnerabilitiesApi.V1.Controllers;
-using ResidentVulnerabilitiesApi.V1.UseCase;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
+using ResidentVulnerabilitiesApi.V1.Controllers;
+using ResidentVulnerabilitiesApi.V1.UseCase;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.Controllers
 {

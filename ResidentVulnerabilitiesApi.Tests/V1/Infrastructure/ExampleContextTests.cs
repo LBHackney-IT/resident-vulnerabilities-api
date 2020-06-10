@@ -1,7 +1,7 @@
 using System.Linq;
+using NUnit.Framework;
 using ResidentVulnerabilitiesApi.Tests.V1.Helper;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
-using NUnit.Framework;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.Infrastructure
 {

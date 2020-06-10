@@ -1,6 +1,6 @@
-using ResidentVulnerabilitiesApi.V1.UseCase;
 using FluentAssertions;
 using NUnit.Framework;
+using ResidentVulnerabilitiesApi.V1.UseCase;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.UseCase
 {

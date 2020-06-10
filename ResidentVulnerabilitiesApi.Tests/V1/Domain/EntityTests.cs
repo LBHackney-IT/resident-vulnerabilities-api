@@ -1,7 +1,7 @@
 using System;
-using ResidentVulnerabilitiesApi.V1.Domain;
 using FluentAssertions;
 using NUnit.Framework;
+using ResidentVulnerabilitiesApi.V1.Domain;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.Domain
 {
