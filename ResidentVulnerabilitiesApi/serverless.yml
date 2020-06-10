@@ -10,7 +10,6 @@ provider:
   region: eu-west-2
 
 package:
-# TODO: Rename zipfile in build.sh and build.cmd to match this
   artifact: ./bin/release/netcoreapp3.1/resident-vulnerabilities-api.zip
 
 functions:
