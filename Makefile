@@ -4,19 +4,19 @@ setup:
 
 .PHONY: build
 build:
-	docker-compose build base-api
+	docker-compose build resident-vulnerabilities-api
 
 .PHONY: serve
 serve:
-	docker-compose build base-api && docker-compose up base-api
+	docker-compose build resident-vulnerabilities-api && docker-compose up resident-vulnerabilities-api
 
 .PHONY: shell
 shell:
-	docker-compose run base-api bash
+	docker-compose run resident-vulnerabilities-api bash
 
 .PHONY: test
 test:
-	docker-compose up test-database & docker-compose build base-api-test && docker-compose up base-api-test
+	docker-compose up test-database & docker-compose build resident-vulnerabilities-api-test && docker-compose up resident-vulnerabilities-api-test
 
 .PHONY: lint
 lint:
