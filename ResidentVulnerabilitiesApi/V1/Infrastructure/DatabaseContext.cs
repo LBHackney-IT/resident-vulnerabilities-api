@@ -1,6 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using ResidentVulnerabilitiesApi.V1.Domain;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
-using Microsoft.EntityFrameworkCore;
 
 namespace ResidentVulnerabilitiesApi.V1.Infrastructure
 {

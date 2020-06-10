@@ -1,5 +1,5 @@
-using ResidentVulnerabilitiesApi.V1.Boundary;
 using Microsoft.Extensions.HealthChecks;
+using ResidentVulnerabilitiesApi.V1.Boundary;
 
 namespace ResidentVulnerabilitiesApi.V1.UseCase
 {

@@ -1,10 +1,10 @@
 using System.Threading;
-using ResidentVulnerabilitiesApi.V1.UseCase;
 using Bogus;
 using FluentAssertions;
 using Microsoft.Extensions.HealthChecks;
 using Moq;
 using NUnit.Framework;
+using ResidentVulnerabilitiesApi.V1.UseCase;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.UseCase
 {

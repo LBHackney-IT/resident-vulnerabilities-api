@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using ResidentVulnerabilitiesApi.V1.Gateways;
-using ResidentVulnerabilitiesApi.V1.Infrastructure;
-using ResidentVulnerabilitiesApi.Versioning;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +13,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using ResidentVulnerabilitiesApi.V1.Gateways;
+using ResidentVulnerabilitiesApi.V1.Infrastructure;
+using ResidentVulnerabilitiesApi.Versioning;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace ResidentVulnerabilitiesApi
@@ -29,8 +29,7 @@ namespace ResidentVulnerabilitiesApi
 
         public IConfiguration Configuration { get; }
         private static List<ApiVersionDescription> _apiVersions { get; set; }
-        //TODO update the below to the name of your API
-        private const string ApiName = "ResidentVulnerabilitiesApi";
+        private const string ApiName = "resident-vulnerabilities";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public static void ConfigureServices(IServiceCollection services)
@@ -90,9 +89,9 @@ namespace ResidentVulnerabilitiesApi
                     var version = $"v{apiVersion.ApiVersion.ToString()}";
                     c.SwaggerDoc(version, new OpenApiInfo
                     {
-                        Title = $"{ResidentVulnerabilitiesApi}-api {version}",
+                        Title = $"{ApiName}-api {version}",
                         Version = version,
-                        Description = $"{ResidentVulnerabilitiesApi} version {version}. Please check older versions for depreciated endpoints."
+                        Description = $"{ApiName} version {version}. Please check older versions for depreciated endpoints."
                     });
                 }
 
@@ -150,7 +149,7 @@ namespace ResidentVulnerabilitiesApi
                 {
                     //Create a swagger endpoint for each swagger version
                     c.SwaggerEndpoint($"{apiVersionDescription.GetFormattedApiVersion()}/swagger.json",
-                        $"{ResidentVulnerabilitiesApi}-api {apiVersionDescription.GetFormattedApiVersion()}");
+                        $"{ApiName}-api {apiVersionDescription.GetFormattedApiVersion()}");
                 }
             });
             app.UseSwagger();
