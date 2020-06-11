@@ -24,6 +24,11 @@ functions:
       - http:
           path: /{proxy+}
           method: ANY
+  ResidentVulnerabilitiesDataPipeline:
+    name: ${self:service}-${self:provider.stage}
+    handler: ResidentVulnerabilitiesApi::ResidentVulnerabilitiesApi.LambdaEntryPoint::RunDataPipeline
+    role: lambdaExecutionRole
+
 resources:
   Resources:
     lambdaExecutionRole:

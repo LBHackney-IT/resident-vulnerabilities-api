@@ -57,8 +57,8 @@ commands:
           command: |
             cd ./terraform/<<parameters.environment>>/
             terraform apply -auto-approve
-  deploy-lambda:
-    description: "Deploys API via Serverless"
+  deploy-lambda-functions:
+    description: "Deploys API and Datapipeline lambdas via Serverless"
     parameters:
       stage:
         type: string
@@ -141,17 +141,17 @@ jobs:
   deploy-to-development:
     executor: docker-dotnet
     steps:
-      - deploy-lambda:
+      - deploy-lambda-functions:
           stage: "development"
   deploy-to-staging:
     executor: docker-dotnet
     steps:
-      - deploy-lambda:
+      - deploy-lambda-functions:
           stage: "staging"
   deploy-to-production:
     executor: docker-dotnet
     steps:
-      - deploy-lambda:
+      - deploy-lambda-functions:
           stage: "production"
 
 workflows:
