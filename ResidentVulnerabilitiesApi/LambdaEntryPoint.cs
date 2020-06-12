@@ -12,10 +12,6 @@ namespace ResidentVulnerabilitiesApi
                 .UseStartup<Startup>();
         }
 
-        // Placeholder for data pipeline lambda function
-        public void RunDataPipeline(ILambdaContext context)
-        {
-            // TO DO: Add logic for data pipeline
-        }
+        // TO DO: Add lambda handler function for data pipeline process
     }
 }
