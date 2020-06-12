@@ -11,7 +11,14 @@ namespace ResidentVulnerabilitiesApi
             builder
                 .UseStartup<Startup>();
         }
+    }
 
-        // TO DO: Add lambda handler function for data pipeline process
+    // To Do: Add logic for running the data pipeline lambda
+    public static class LambdaFunction
+    {
+        public static void RunDataPipeline()
+        {
+
+        }
     }
 }
