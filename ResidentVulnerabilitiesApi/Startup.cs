@@ -111,13 +111,13 @@ namespace ResidentVulnerabilitiesApi
         {
             var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
-            services.AddDbContext<DatabaseContext>(
+            services.AddDbContext<ResidentVulnerabilitiesContext>(
                 opt => opt.UseNpgsql(connectionString));
         }
 
         private static void RegisterGateways(IServiceCollection services)
         {
-            services.AddSingleton<IExampleGateway, ExampleGateway>();
+            services.AddSingleton<IResidentVulnerabilitiesGateway, ResidentVulnerabilitiesGateway>();
         }
 
         private static void RegisterUseCases(IServiceCollection services)
