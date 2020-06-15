@@ -11,11 +11,11 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Factories
         [Test]
         public void CanBeCreatedFromDatabaseEntity()
         {
-            var databaseEntity = new DatabaseEntity();
-            var entity = databaseEntity.ToDomain();
+            var person = new Person();
+            var entity = person.ToDomain();
 
-            databaseEntity.Id.Should().Be(entity.Id);
-            databaseEntity.CreatedAt.Should().BeSameDateAs(entity.CreatedAt);
+            person.Id.Should().Be(entity.Id);
+            person.CreatedAt.Should().BeSameDateAs(entity.CreatedAt);
         }
     }
 }
