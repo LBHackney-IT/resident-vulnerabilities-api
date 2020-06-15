@@ -5,12 +5,12 @@ using ResidentVulnerabilitiesApi.V1.Infrastructure;
 namespace ResidentVulnerabilitiesApi.V1.Infrastructure
 {
 
-    public class DatabaseContext : DbContext
+    public class ResidentVulnerabilitiesContext : DbContext
     {
-        public DatabaseContext(DbContextOptions options) : base(options)
+        public ResidentVulnerabilitiesContext(DbContextOptions options) : base(options)
         {
         }
 
-        public DbSet<DatabaseEntity> DatabaseEntities { get; set; }
+        public DbSet<Person> Persons { get; set; }
     }
 }
