@@ -27,11 +27,11 @@ namespace ResidentVulnerabilitiesApi.Tests
             {
                 var dbBuilder = new DbContextOptionsBuilder();
                 dbBuilder.UseNpgsql(_connection);
-                var context = new DatabaseContext(dbBuilder.Options);
+                var context = new ResidentVulnerabilitiesContext(dbBuilder.Options);
                 services.AddSingleton(context);
 
                 var serviceProvider = services.BuildServiceProvider();
-                var dbContext = serviceProvider.GetRequiredService<DatabaseContext>();
+                var dbContext = serviceProvider.GetRequiredService<ResidentVulnerabilitiesContext>();
 
                 dbContext.Database.EnsureCreated();
             });
