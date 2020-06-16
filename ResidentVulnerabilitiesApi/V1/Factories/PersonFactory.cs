@@ -1,16 +1,14 @@
-using AutoFixture;
+using ResidentVulnerabilitiesApi.V1.Boundary.Responses;
 using ResidentVulnerabilitiesApi.V1.Domain;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
 
-namespace ResidentVulnerabilitiesApi.Tests.V1.Helper
+namespace ResidentVulnerabilitiesApi.V1.Factories
 {
-    public static class TestHelper
+    public static class PersonFactory
     {
-        public static ResidentVulnerabilitiesApi.V1.Infrastructure.Person CreateDatabasePerson()
+        public static Domain.Person ToDomain(this Infrastructure.Person person)
         {
-            var person = new Fixture().Create<ResidentVulnerabilitiesApi.V1.Infrastructure.Person>();
-
-            return new ResidentVulnerabilitiesApi.V1.Infrastructure.Person
+            return new Domain.Person
             {
                 Id = person.Id,
                 DateCreated = person.DateCreated,
@@ -22,7 +20,7 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Helper
                 LowIncome = person.LowIncome,
                 ChildWithSEND = person.ChildWithSEND,
                 SingleParent = person.SingleParent,
-                LearningDisability = person.LearningDisability
+                LearningDisability = person.LearningDisability,
             };
         }
     }

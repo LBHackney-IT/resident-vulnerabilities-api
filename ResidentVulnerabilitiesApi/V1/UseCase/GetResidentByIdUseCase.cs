@@ -10,11 +10,11 @@ namespace ResidentVulnerabilitiesApi.V1.UseCase
 {
     public class GetResidentByIdUseCase : IGetResidentByIdUseCase
     {
-        private IResidentVulnerabilitiesGateway _residentVulnerabilitieswGateway;
-        public GetResidentByIdUseCase(IResidentVulnerabilitiesGateway residentVulnerabilitiesGateway)
-        {
-            _residentVulnerabilitieswGateway = residentVulnerabilitiesGateway;
-        }
+        // private IResidentVulnerabilitiesGateway _residentVulnerabilitieswGateway;
+        // public GetResidentByIdUseCase(IResidentVulnerabilitiesGateway residentVulnerabilitiesGateway)
+        // {
+        //     _residentVulnerabilitieswGateway = residentVulnerabilitiesGateway;
+        // }
 
         public ResidentInformation Execute(int id)
         {

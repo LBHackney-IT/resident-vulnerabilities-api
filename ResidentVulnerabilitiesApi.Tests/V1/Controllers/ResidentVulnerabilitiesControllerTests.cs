@@ -29,9 +29,17 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Controllers
         {
             var residentInfo = new ResidentInformation()
             {
-                FirstName = "test",
-                LastName = "test",
-                DateOfBirth = "01/01/2020"
+                Id = 123,
+                DateCreated = new Date(),
+                HealthConditionOrDisability = true,
+                ReceivesCouncilTaxReduction = true,
+                AscCases = 1,
+                CscCases = 1,
+                LivingInTemporaryAccommodation = false,
+                LowIncome = true,
+                ChildWithSEND = false,
+                SingleParent = false,
+                LearningDisability = false
             };
 
             _mockGetResidentByIdUseCase.Setup(x => x.Execute(12345)).Returns(residentInfo);

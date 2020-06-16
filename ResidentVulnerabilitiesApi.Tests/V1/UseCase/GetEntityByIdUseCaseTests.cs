@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.UseCase
 {
-    public class GetEntityByIdUseCaseTests
+    public class GetPersonByIdUseCaseTests
     {
 
     }

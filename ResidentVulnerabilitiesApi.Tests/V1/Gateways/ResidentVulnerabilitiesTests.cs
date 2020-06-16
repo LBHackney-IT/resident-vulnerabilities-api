@@ -26,8 +26,7 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Gateways
         }
 
         [Test]
-        [Ignore("Not implemented")]
-        public void GetEntityByIdReturnsEmptyArray()
+        public void GetResidentByIdReturnsNullIfDoesntExist()
         {
             var response = _classUnderTest.GetResidentById(123);
 
@@ -35,18 +34,25 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Gateways
         }
 
         [Test]
-        public void GetEntityByIdReturnsCorrectResponse()
+        public void GetResidentByIdReturnsCorrectResponse()
         {
-            /*var entity = _fixture.Create<Entity>();
-            var databaseEntity = DatabaseEntityHelper.CreateDatabaseEntityFrom(entity);
+            var databasePerson = TestHelper.CreateDatabasePerson();
 
-            DatabaseContext.DatabaseEntities.Add(databaseEntity);
+            DatabaseContext.DatabaseEntities.Add(databasePerson);
             DatabaseContext.SaveChanges();
 
-            var response = _classUnderTest.GetEntityById(databaseEntity.Id);
+            var response = _classUnderTest.GetResidentById(databasePerson.Id);
 
-            databaseEntity.Id.Should().Be(response.Id);
-            databaseEntity.CreatedAt.Should().BeSameDateAs(response.CreatedAt);*/
+            response.Id.Should().Be(databasePerson.Id);
+            response.DateCreated.Should().BeSameDateAs(databasePerson.DateCreated);
+            response.ReceivesCouncilTaxReduction.Should().Be(databasePerson.ReceivesCouncilTaxReduction);
+            response.AscCases.Should().Be(databasePerson.AscCases);
+            response.CscCases.Should().Be(databasePerson.CscCases);
+            response.LivingInTemporaryAccommodation.Should().Be(databasePerson.LivingInTemporaryAccommodation);
+            response.LowIncome.Should().Be(databasePerson.LowIncome);
+            response.ChildWithSEND.Should().Be(databasePerson.ChildWithSEND);
+            response.SingleParent.Should().Be(databasePerson.SingleParent);
+            response.LearningDisability.Should().Be(databasePerson.LearningDisability);
         }
     }
 }

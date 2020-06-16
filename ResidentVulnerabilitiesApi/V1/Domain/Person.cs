@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace ResidentVulnerabilitiesApi.V1.Boundary.Responses
+namespace ResidentVulnerabilitiesApi.V1.Domain
 {
-    public class ResidentInformation
+    public class Person
     {
         public int Id { get; set; }
         public DateTime DateCreated { get; set; }

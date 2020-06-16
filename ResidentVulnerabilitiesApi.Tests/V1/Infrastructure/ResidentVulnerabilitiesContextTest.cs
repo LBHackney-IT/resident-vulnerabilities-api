@@ -9,17 +9,16 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Infrastructure
     public class ResidentVulnerabilitiesContextTest : DatabaseTests
     {
         [Test]
-        [Ignore("TODO")]
         public void CanGetADatabaseEntity()
         {
-            var databaseEntity = TestHelper.CreateDatabasePersonEntity();
+            var databaseEntity = TestHelper.CreateDatabasePerson();
 
             DatabaseContext.Add(databaseEntity);
             DatabaseContext.SaveChanges();
 
-            //var result = DatabaseContext..ToList().FirstOrDefault();
+            var result = DatabaseContext.ToList().FirstOrDefault();
 
-            //Assert.AreEqual(result, databaseEntity);
+            Assert.AreEqual(result, databaseEntity);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.E2ETests
     {
         public static ResidentInformation AddPersonWithRelatesEntitiesToDb(ResidentVulnerabilitiesContext context, int? id = null, string firstname = null, string lastname = null, string postcode = null, string addressLines = null)
         {
-            var person = TestHelper.CreateDatabasePersonEntity();
+            var person = TestHelper.CreateDatabasePerson();
             var addedPerson = context.Persons.Add(person);
             context.SaveChanges();
 

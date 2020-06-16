@@ -4,43 +4,45 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ResidentVulnerabilitiesApi.V1.Infrastructure
 {
-    [Table("example_entities")]
+    [Table("resident_vulnerabilities")]
     public class Person
     {
-        [Column("id")] public int Id { get; set; }
+        [Column("uprn")]
+        [MaxLength(16)]
+        [Key]
+        public int Id { get; set; }
 
-        [Column("created_at")] public DateTime CreatedAt { get; set; }
+        [Column("dateCreated")]
+        public DateTime DateCreated { get; set; }
 
-        [Column("full_name")]
-        [MaxLength(62)]
-        public string FullName { get; set; }
+        [Column("healthConditionOrDisability")]
+        public bool HealthConditionOrDisability { get; set; }
 
-        [Column("title")]
-        [MaxLength(8)]
-        public string Title { get; set; }
+        [Column("receivesCouncilTaxReduction")]
+        public bool ReceivesCouncilTaxReduction { get; set; }
 
-        [Column("first_name")]
-        [MaxLength(30)]
-        public string FirstName { get; set; }
-
-        [Column("last_name")]
-        [MaxLength(30)]
-        public string LastName { get; set; }
-
-        [Column("nhs_id")]
+        [Column("ascCases")]
         [MaxLength(10)]
-        public int NhsNumber { get; set; }
+        public int AscCases { get; set; }
 
-        [Column("date_of_birth")]
-        public DateTime DateOfBirth { get; set; }
+        [Column("cscCases")]
+        [MaxLength(10)]
+        public int CscCases { get; set; }
 
-        [Column("gender")]
-        [MaxLength(1)]
-        public string Gender { get; set; }
+        [Column("livingInTemporaryAccomodation")]
+        public bool LivingInTemporaryAccommodation { get; set; }
 
-        [Column("email_address")]
-        [MaxLength(240)]
-        public string EmailAddress { get; set; }
+        [Column("lowIncome")]
+        public bool LowIncome { get; set; }
+
+        [Column("childWithSEND")]
+        public bool ChildWithSEND { get; set; }
+
+        [Column("singleParent")]
+        public bool SingleParent { get; set; }
+
+        [Column("learningDisability")]
+        public bool LearningDisability { get; set; }
 
     }
 }
