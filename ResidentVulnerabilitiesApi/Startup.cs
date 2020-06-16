@@ -15,6 +15,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using ResidentVulnerabilitiesApi.V1.Gateways;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
+using ResidentVulnerabilitiesApi.V1.UseCase;
+using ResidentVulnerabilitiesApi.V1.UseCase.Interfaces;
 using ResidentVulnerabilitiesApi.Versioning;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -122,8 +124,7 @@ namespace ResidentVulnerabilitiesApi
 
         private static void RegisterUseCases(IServiceCollection services)
         {
-            if (services == null) throw new ArgumentNullException(nameof(services));
-            // your usecases here
+            services.AddScoped<IGetResidentByUprnUseCase, GetResidentByUprnUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
