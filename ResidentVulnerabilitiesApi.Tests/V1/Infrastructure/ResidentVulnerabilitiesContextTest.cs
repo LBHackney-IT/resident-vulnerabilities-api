@@ -1,4 +1,6 @@
 using System.Linq;
+using AutoFixture;
+using FluentAssertions;
 using NUnit.Framework;
 using ResidentVulnerabilitiesApi.Tests.V1.Helper;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
@@ -9,17 +11,16 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Infrastructure
     public class ResidentVulnerabilitiesContextTest : DatabaseTests
     {
         [Test]
-        [Ignore("TODO")]
-        public void CanGetADatabaseEntity()
+        public void CanGetAPersonFromTheDatabase()
         {
-            var databaseEntity = TestHelper.CreateDatabasePersonEntity();
+            var resident = new Fixture().Create<Resident>();
 
-            DatabaseContext.Add(databaseEntity);
+            DatabaseContext.Add(resident);
             DatabaseContext.SaveChanges();
 
-            //var result = DatabaseContext..ToList().FirstOrDefault();
+            var result = DatabaseContext.ResidentInformation.ToList().FirstOrDefault();
 
-            //Assert.AreEqual(result, databaseEntity);
+            resident.Should().BeEquivalentTo(result);
         }
     }
 }

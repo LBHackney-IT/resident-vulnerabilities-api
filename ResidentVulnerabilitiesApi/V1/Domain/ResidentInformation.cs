@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace ResidentVulnerabilitiesApi.V1.Boundary.Responses
+namespace ResidentVulnerabilitiesApi.V1.Domain
 {
     public class ResidentInformation
     {
@@ -18,6 +15,5 @@ namespace ResidentVulnerabilitiesApi.V1.Boundary.Responses
         public bool ChildWithSEND { get; set; }
         public bool SingleParent { get; set; }
         public bool LearningDisability { get; set; }
-
     }
 }

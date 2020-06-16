@@ -23,11 +23,11 @@ namespace ResidentVulnerabilitiesApi.V1.Infrastructure
 
         [Column("asc_cases")]
         [MaxLength(10)]
-        public int AscCases { get; set; }
+        public int AdultSocialCareCases { get; set; }
 
         [Column("csc_cases")]
         [MaxLength(10)]
-        public int CscCases { get; set; }
+        public int ChildSocialCareCases { get; set; }
 
         [Column("living_in_temporary_accomodation")]
         public bool LivingInTemporaryAccommodation { get; set; }

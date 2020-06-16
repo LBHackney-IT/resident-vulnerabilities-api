@@ -1,4 +1,3 @@
-using ResidentVulnerabilitiesApi.V1.Boundary.Responses;
 using ResidentVulnerabilitiesApi.V1.Domain;
 using ResidentVulnerabilitiesApi.V1.Factories;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
@@ -14,14 +13,11 @@ namespace ResidentVulnerabilitiesApi.V1.Gateways
             _databaseContext = databaseContext;
         }
 
-        public ResidentInformation GetResidentById(int uprn)
+        public ResidentInformation GetResidentInformationByUPRN(int uprn)
         {
-            var result = _databaseContext.Persons.Find(uprn);
+            var result = _databaseContext.ResidentInformation.Find(uprn);
 
-            /*return (result != null) ?
-                result.ToDomain() :
-                null;*/
-            return new ResidentInformation();
+            return (result != null) ? result.ToDomain() : null;
         }
     }
 }
