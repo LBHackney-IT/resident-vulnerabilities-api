@@ -33,11 +33,8 @@ data "aws_vpc" "development_vpc" {
 }
 data "aws_subnet_ids" "development_private_subnets" {
   vpc_id = data.aws_vpc.development_vpc.id
-  filter {
-    name   = "tag:Type"
-    values = ["private"]
-  }
 }
+
 //database to be used for development purposes, not for DMS
 module "postgres_db_development" {
   source = "github.com/LBHackney-IT/aws-hackney-common-terraform.git//modules/database/postgres"
