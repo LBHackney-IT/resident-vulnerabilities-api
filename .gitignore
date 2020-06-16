@@ -60,3 +60,7 @@ bin/
 tmp/
 .vs/
 /ResidentVulnerabilitiesApi.Tests/Properties/launchSettings.json
+
+.fake
+.ionide
+.vscode
