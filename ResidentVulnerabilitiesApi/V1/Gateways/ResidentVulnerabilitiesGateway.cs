@@ -2,6 +2,7 @@ using ResidentVulnerabilitiesApi.V1.Boundary.Responses;
 using ResidentVulnerabilitiesApi.V1.Domain;
 using ResidentVulnerabilitiesApi.V1.Factories;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
+using ResidentInformation = ResidentVulnerabilitiesApi.V1.Domain.ResidentInformation;
 
 namespace ResidentVulnerabilitiesApi.V1.Gateways
 {
@@ -14,7 +15,7 @@ namespace ResidentVulnerabilitiesApi.V1.Gateways
             _databaseContext = databaseContext;
         }
 
-        public ResidentInformation GetResidentById(int uprn)
+        public ResidentInformation GetResidentByUprn(int uprn)
         {
             var result = _databaseContext.Persons.Find(uprn);
 

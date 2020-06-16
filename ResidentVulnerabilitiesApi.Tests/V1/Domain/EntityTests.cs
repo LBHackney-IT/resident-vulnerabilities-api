@@ -2,6 +2,7 @@ using System;
 using FluentAssertions;
 using NUnit.Framework;
 using ResidentVulnerabilitiesApi.V1.Domain;
+using ResidentVulnerabilitiesApi.V1.Infrastructure;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.Domain
 {
@@ -11,18 +12,18 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Domain
         [Test]
         public void EntitiesHaveAnId()
         {
-            var entity = new Entity();
-            entity.Id.Should().BeGreaterOrEqualTo(0);
+            var entity = new Person();
+            entity.UPRN.Should().BeGreaterOrEqualTo(0);
         }
 
         [Test]
         public void EntitiesHaveACreatedAt()
         {
-            var entity = new Entity();
+            var entity = new Person();
             var date = new DateTime(2019, 02, 21);
-            entity.CreatedAt = date;
+            entity.DateCreated = date;
 
-            entity.CreatedAt.Should().BeSameDateAs(date);
+            entity.DateCreated.Should().BeSameDateAs(date);
         }
     }
 }

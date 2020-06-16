@@ -30,7 +30,7 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Gateways
         [Ignore("Not implemented")]
         public void GetEntityByIdReturnsEmptyArray()
         {
-            var response = _classUnderTest.GetResidentById(123);
+            var response = _classUnderTest.GetResidentByUprn(123);
 
             response.Should().BeNull();
         }

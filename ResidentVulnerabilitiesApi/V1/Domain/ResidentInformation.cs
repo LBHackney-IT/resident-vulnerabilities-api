@@ -1,14 +1,10 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ResidentVulnerabilitiesApi.V1.Infrastructure
+namespace ResidentVulnerabilitiesApi.V1.Domain
 {
-    [Table("example_table")]
-    public class Person
+    public class ResidentInformation
     {
-        [Column("id")] public int UPRN { get; set; }
-
+        public string UPRN { get; set; }
         public bool HealthConditionOrDisability { get; set; }
 
         public bool ReceivesCouncilTaxReduction { get; set; }
@@ -27,8 +23,6 @@ namespace ResidentVulnerabilitiesApi.V1.Infrastructure
 
         public bool LearningDisability { get; set; }
 
-        [Column("created_at")]
-        public DateTime DateCreated { get; set; }
-
+        public string DateCreated { get; set; }
     }
 }

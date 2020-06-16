@@ -9,18 +9,18 @@ namespace ResidentVulnerabilitiesApi.V1.Controllers
     [Produces("application/json")]
     public class ResidentVulnerabilitiesController : Controller
     {
-        private IGetResidentByUprnUseCase _getResidentByIdUseCase;
+        private IGetResidentByUprnUseCase _getResidentByUprnUseCase;
 
-        public ResidentVulnerabilitiesController(IGetResidentByUprnUseCase getResidentByIdUseCase)
+        public ResidentVulnerabilitiesController(IGetResidentByUprnUseCase getResidentByUprnUseCase)
         {
-            _getResidentByIdUseCase = getResidentByIdUseCase;
+            _getResidentByUprnUseCase = getResidentByUprnUseCase;
         }
 
         [HttpGet]
         [Route("{uprn}")]
         public IActionResult ViewRecord(int uprn)
         {
-            return Ok(_getResidentByIdUseCase.Execute(uprn));
+            return Ok(_getResidentByUprnUseCase.Execute(uprn));
         }
 
     }

@@ -28,7 +28,7 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Controllers
         {
             var residentInfo = new ResidentInformation()
             {
-                UPRN = 12345
+                UPRN = "12345"
             };
 
             _mockGetResidentByUprnUseCase.Setup(x => x.Execute(12345)).Returns(residentInfo);
