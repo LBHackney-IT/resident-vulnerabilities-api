@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using ResidentVulnerabilitiesApi.V1.Domain;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
 
 namespace ResidentVulnerabilitiesApi.V1.Infrastructure
@@ -11,6 +10,6 @@ namespace ResidentVulnerabilitiesApi.V1.Infrastructure
         {
         }
 
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<Resident> ResidentInformation { get; set; }
     }
 }

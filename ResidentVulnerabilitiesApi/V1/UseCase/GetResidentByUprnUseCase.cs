@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,15 +10,30 @@ namespace ResidentVulnerabilitiesApi.V1.UseCase
 {
     public class GetResidentByUprnUseCase : IGetResidentByUprnUseCase
     {
-        private IResidentVulnerabilitiesGateway _residentVulnerabilitieswGateway;
+        private IResidentVulnerabilitiesGateway _residentVulnerabilitiesGateway;
         public GetResidentByUprnUseCase(IResidentVulnerabilitiesGateway residentVulnerabilitiesGateway)
         {
-            _residentVulnerabilitieswGateway = residentVulnerabilitiesGateway;
+            _residentVulnerabilitiesGateway = residentVulnerabilitiesGateway;
         }
 
         public ResidentInformation Execute(int uprn)
         {
-            return new ResidentInformation();
+            var residentInformation = _residentVulnerabilitiesGateway.GetResidentInformationByUPRN(uprn);
+
+            return new Boundary.Responses.ResidentInformation
+            {
+                UPRN = residentInformation.UPRN,
+                DateCreated = residentInformation.DateCreated,
+                HealthConditionOrDisability = residentInformation.HealthConditionOrDisability,
+                ReceivesCouncilTaxReduction = residentInformation.ReceivesCouncilTaxReduction,
+                AdultSocialCareCases = residentInformation.AdultSocialCareCases,
+                ChildSocialCareCases = residentInformation.ChildSocialCareCases,
+                LivingInTemporaryAccommodation = residentInformation.LivingInTemporaryAccommodation,
+                LowIncome = residentInformation.LowIncome,
+                ChildWithSEND = residentInformation.ChildWithSEND,
+                SingleParent = residentInformation.SingleParent,
+                LearningDisability = residentInformation.LearningDisability
+            };
         }
     }
 }

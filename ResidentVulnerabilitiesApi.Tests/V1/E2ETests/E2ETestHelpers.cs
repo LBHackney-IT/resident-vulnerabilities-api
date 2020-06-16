@@ -1,17 +1,19 @@
+using AutoFixture;
 using ResidentVulnerabilitiesApi.Tests.V1.Helper;
-using ResidentVulnerabilitiesApi.V1.Boundary.Responses;
 using ResidentVulnerabilitiesApi.V1.Infrastructure;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.E2ETests
 {
     public static class E2ETestHelpers
     {
-        public static ResidentInformation AddPersonWithRelatesEntitiesToDb(ResidentVulnerabilitiesContext context)
+        public static Resident AddResidentWithRelatedEntitiesToDb(ResidentVulnerabilitiesContext context)
         {
-            var person = TestHelper.CreateDatabasePersonEntity();
-            var addedPerson = context.Persons.Add(person);
+            var resident = new Fixture().Create<Resident>();
+
+            context.ResidentInformation.Add(resident);
             context.SaveChanges();
-            return new ResidentInformation();
+
+            return resident;
         }
     }
 }

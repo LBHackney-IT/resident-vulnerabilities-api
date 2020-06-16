@@ -4,13 +4,13 @@ using NUnit.Framework;
 using ResidentVulnerabilitiesApi.Tests.V1.Helper;
 using ResidentVulnerabilitiesApi.V1.Domain;
 using ResidentVulnerabilitiesApi.V1.Gateways;
+using ResidentVulnerabilitiesApi.V1.Infrastructure;
 
 namespace ResidentVulnerabilitiesApi.Tests.V1.Gateways
 {
     [TestFixture]
     public class ResidentVulnerabilitiesTests : DatabaseTests
     {
-        //private Fixture _fixture = new Fixture();
         private ResidentVulnerabilitiesGateway _classUnderTest;
 
         [SetUp]
@@ -20,35 +20,30 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Gateways
         }
 
         [Test]
-        [Ignore("Not Implemented")]
         public void GatewayImplementsBoundaryInterface()
         {
             Assert.NotNull(_classUnderTest is IResidentVulnerabilitiesGateway);
         }
 
         [Test]
-        [Ignore("Not implemented")]
-        public void GetEntityByIdReturnsEmptyArray()
+        public void GetResidentInformationByUPRNReturnsNullIfNoneExist()
         {
-            var response = _classUnderTest.GetResidentById(123);
+            var response = _classUnderTest.GetResidentInformationByUPRN(123);
 
             response.Should().BeNull();
         }
 
         [Test]
-        [Ignore("Not Implemented")]
-        public void GetEntityByIdReturnsCorrectResponse()
+        public void GetResidentInformationByUPRNReturnsCorrectResponse()
         {
-            /*var entity = _fixture.Create<Entity>();
-            var databaseEntity = DatabaseEntityHelper.CreateDatabaseEntityFrom(entity);
+            var resident = new Fixture().Create<Resident>();
 
-            DatabaseContext.DatabaseEntities.Add(databaseEntity);
+            DatabaseContext.ResidentInformation.Add(resident);
             DatabaseContext.SaveChanges();
 
-            var response = _classUnderTest.GetEntityById(databaseEntity.Id);
+            var response = _classUnderTest.GetResidentInformationByUPRN(resident.UPRN);
 
-            databaseEntity.Id.Should().Be(response.Id);
-            databaseEntity.CreatedAt.Should().BeSameDateAs(response.CreatedAt);*/
+            response.Should().BeEquivalentTo(resident);
         }
     }
 }
