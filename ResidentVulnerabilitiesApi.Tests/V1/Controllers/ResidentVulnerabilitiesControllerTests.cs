@@ -32,11 +32,41 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.Controllers
             };
 
             _mockGetResidentByUprnUseCase.Setup(x => x.Execute(12345)).Returns(residentInfo);
-            var response = _classUnderTest.ViewRecord(12345) as OkObjectResult;
+            var response = _classUnderTest.ViewRecord("12345") as OkObjectResult;
 
             response.Should().NotBeNull();
             response.StatusCode.Should().Be(200);
             response.Value.Should().BeEquivalentTo(residentInfo);
+        }
+
+        [Test]
+        public void ViewRecordWithInvalidUPRNReturnsBadRequest()
+        {
+            var residentInfo = new ResidentInformation()
+            {
+                UPRN = 12345
+            };
+
+            _mockGetResidentByUprnUseCase.Setup(x => x.Execute(12345)).Returns(residentInfo);
+            var response = _classUnderTest.ViewRecord("invaliduprn") as ObjectResult;
+
+            response.Should().NotBeNull();
+            response.StatusCode.Should().Be(400);
+        }
+
+        [Test]
+        public void ViewRecordWithNoMatchReturnsNotFound()
+        {
+            var residentInfo = new ResidentInformation()
+            {
+                UPRN = 12345
+            };
+
+            _mockGetResidentByUprnUseCase.Setup(x => x.Execute(12345)).Returns(residentInfo);
+
+            var response = _classUnderTest.ViewRecord("12346") as ObjectResult;
+
+            response.StatusCode.Should().Be(404);
         }
     }
 }

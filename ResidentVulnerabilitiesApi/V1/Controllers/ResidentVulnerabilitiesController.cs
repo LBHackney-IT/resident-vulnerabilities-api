@@ -1,3 +1,5 @@
+using System;
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using ResidentVulnerabilitiesApi.V1.UseCase.Interfaces;
 
@@ -18,10 +20,21 @@ namespace ResidentVulnerabilitiesApi.V1.Controllers
 
         [HttpGet]
         [Route("{uprn}")]
-        public IActionResult ViewRecord(int uprn)
+        public IActionResult ViewRecord(string requestUprn)
         {
-            return Ok(_useCase.Execute(uprn));
-        }
+            try
+            {
+                var uprn = Int32.Parse(requestUprn, NumberStyles.Integer, NumberFormatInfo.InvariantInfo);
+                var response = _useCase.Execute(uprn);
+                if (response == null)
+                    return NotFound("No match found.");
+                return Ok(_useCase.Execute(uprn));
+            }
+            catch (FormatException)
+            {
+                return BadRequest("Invalid UPRN format.");
+            }
 
+        }
     }
 }
