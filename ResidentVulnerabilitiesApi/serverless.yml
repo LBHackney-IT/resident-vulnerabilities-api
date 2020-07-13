@@ -85,19 +85,19 @@ custom:
   vpc:
     development:
       securityGroupIds:
-        - sg-0615f1e12aacd43fb
+        - sg-0a2446b4bca5fe246
       subnetIds:
         - subnet-0deabb5d8fb9c3446
         - subnet-000b89c249f12a8ad
     staging:
       securityGroupIds:
-        - sg-0436b39b527a8ef07
+        - sg-0f613e9ab3f895b7e
       subnetIds:
         - subnet-06d3de1bd9181b0d7
         - subnet-0ed7d7713d1127656
     production:
       securityGroupIds:
-        - sg-0f4370f57c11b8082
+        - 	sg-037f15a17ce993231
       subnetIds:
         - subnet-01d3657f97a243261
         - subnet-0b7b8fea07efabf34
