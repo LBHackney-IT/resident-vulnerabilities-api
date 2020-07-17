@@ -19,7 +19,7 @@ namespace ResidentVulnerabilitiesApi.V1.Controllers
         }
 
         [HttpGet]
-        [Route("{uprn}")]
+        [Route("{requestUprn}")]
         public IActionResult ViewRecord(string requestUprn)
         {
             try
@@ -37,7 +37,7 @@ namespace ResidentVulnerabilitiesApi.V1.Controllers
             }
             catch (ArgumentNullException)
             {
-                return BadRequest("Invalid UPRN format.");
+                return BadRequest("Please provide a valid UPRN.");
             }
         }
     }
