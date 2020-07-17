@@ -4,6 +4,6 @@ namespace ResidentVulnerabilitiesApi.V1.UseCase.Interfaces
 {
     public interface IGetResidentByUprnUseCase
     {
-        ResidentInformation Execute(int uprn);
+        ResidentInformation Execute(long uprn);
     }
 }

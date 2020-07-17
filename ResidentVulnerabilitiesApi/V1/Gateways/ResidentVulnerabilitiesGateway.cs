@@ -13,7 +13,7 @@ namespace ResidentVulnerabilitiesApi.V1.Gateways
             _databaseContext = databaseContext;
         }
 
-        public ResidentInformation GetResidentInformationByUPRN(int uprn)
+        public ResidentInformation GetResidentInformationByUPRN(long uprn)
         {
             var result = _databaseContext.ResidentInformation.Find(uprn);
 

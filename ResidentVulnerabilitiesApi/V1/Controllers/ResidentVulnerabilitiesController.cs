@@ -24,7 +24,8 @@ namespace ResidentVulnerabilitiesApi.V1.Controllers
         {
             try
             {
-                var uprn = Int32.Parse(requestUprn, NumberStyles.Integer, NumberFormatInfo.InvariantInfo);
+
+                var uprn = long.Parse(requestUprn);
                 var response = _useCase.Execute(uprn);
                 if (response == null)
                     return NotFound("No match found.");
@@ -34,7 +35,10 @@ namespace ResidentVulnerabilitiesApi.V1.Controllers
             {
                 return BadRequest("Invalid UPRN format.");
             }
-
+            catch (ArgumentNullException)
+            {
+                return BadRequest("Invalid UPRN format.");
+            }
         }
     }
 }
