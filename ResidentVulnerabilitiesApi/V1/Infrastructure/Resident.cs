@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ResidentVulnerabilitiesApi.V1.Infrastructure
 {
-    [Table("resident_vulnerabilities")]
+    [Table("qlik_vulnerability")]
     public class Resident
     {
         [Column("uprn")]
-        [MaxLength(16)]
+        [MaxLength(20)]
         [Key]
         public long UPRN { get; set; }
 

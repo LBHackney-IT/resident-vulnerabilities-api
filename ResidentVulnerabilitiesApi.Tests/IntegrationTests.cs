@@ -37,6 +37,7 @@ namespace ResidentVulnerabilitiesApi.Tests
             _factory = new MockWebApplicationFactory<TStartup>(_connection);
             Client = _factory.CreateClient();
             DatabaseContext = new ResidentVulnerabilitiesContext(_builder.Options);
+            DatabaseContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             DatabaseContext.Database.EnsureCreated();
             _transaction = DatabaseContext.Database.BeginTransaction();
         }

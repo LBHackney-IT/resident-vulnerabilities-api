@@ -20,20 +20,23 @@ namespace ResidentVulnerabilitiesApi.V1.UseCase
         {
             var residentInformation = _residentVulnerabilitiesGateway.GetResidentInformationByUPRN(uprn);
 
-            return new Boundary.Responses.ResidentInformation
-            {
-                UPRN = residentInformation.UPRN,
-                DateCreated = residentInformation.DateCreated,
-                HealthConditionOrDisability = residentInformation.HealthConditionOrDisability,
-                ReceivesCouncilTaxReduction = residentInformation.ReceivesCouncilTaxReduction,
-                AdultSocialCareCases = residentInformation.AdultSocialCareCases,
-                ChildSocialCareCases = residentInformation.ChildSocialCareCases,
-                LivingInTemporaryAccommodation = residentInformation.LivingInTemporaryAccommodation,
-                LowIncome = residentInformation.LowIncome,
-                ChildWithSEND = residentInformation.ChildWithSEND,
-                SingleParent = residentInformation.SingleParent,
-                LearningDisability = residentInformation.LearningDisability
-            };
+            if (residentInformation != null)
+                return new Boundary.Responses.ResidentInformation
+                {
+                    UPRN = residentInformation.UPRN,
+                    DateCreated = residentInformation.DateCreated,
+                    HealthConditionOrDisability = residentInformation.HealthConditionOrDisability,
+                    ReceivesCouncilTaxReduction = residentInformation.ReceivesCouncilTaxReduction,
+                    AdultSocialCareCases = residentInformation.AdultSocialCareCases,
+                    ChildSocialCareCases = residentInformation.ChildSocialCareCases,
+                    LivingInTemporaryAccommodation = residentInformation.LivingInTemporaryAccommodation,
+                    LowIncome = residentInformation.LowIncome,
+                    ChildWithSEND = residentInformation.ChildWithSEND,
+                    SingleParent = residentInformation.SingleParent,
+                    LearningDisability = residentInformation.LearningDisability
+                };
+
+            return null;
         }
     }
 }
