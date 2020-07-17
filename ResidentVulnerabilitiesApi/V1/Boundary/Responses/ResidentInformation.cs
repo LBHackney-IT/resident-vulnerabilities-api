@@ -7,7 +7,7 @@ namespace ResidentVulnerabilitiesApi.V1.Boundary.Responses
 {
     public class ResidentInformation
     {
-        public int UPRN { get; set; }
+        public long UPRN { get; set; }
         public DateTime DateCreated { get; set; }
         public bool HealthConditionOrDisability { get; set; }
         public bool ReceivesCouncilTaxReduction { get; set; }
