@@ -4,6 +4,6 @@ namespace ResidentVulnerabilitiesApi.V1.Gateways
 {
     public interface IResidentVulnerabilitiesGateway
     {
-        ResidentInformation GetResidentInformationByUPRN(int uprn);
+        ResidentInformation GetResidentInformationByUPRN(long uprn);
     }
 }

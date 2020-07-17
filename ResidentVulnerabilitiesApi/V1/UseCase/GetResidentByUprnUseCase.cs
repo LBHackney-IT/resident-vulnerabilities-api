@@ -16,7 +16,7 @@ namespace ResidentVulnerabilitiesApi.V1.UseCase
             _residentVulnerabilitiesGateway = residentVulnerabilitiesGateway;
         }
 
-        public ResidentInformation Execute(int uprn)
+        public ResidentInformation Execute(long uprn)
         {
             var residentInformation = _residentVulnerabilitiesGateway.GetResidentInformationByUPRN(uprn);
 

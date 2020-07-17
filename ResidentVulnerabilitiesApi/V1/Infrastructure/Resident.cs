@@ -10,7 +10,7 @@ namespace ResidentVulnerabilitiesApi.V1.Infrastructure
         [Column("uprn")]
         [MaxLength(16)]
         [Key]
-        public int UPRN { get; set; }
+        public long UPRN { get; set; }
 
         [Column("date_created")]
         public DateTime DateCreated { get; set; }
