@@ -25,7 +25,7 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.UseCase
         }
 
         [Test]
-        public void ReturnsresidentInformationRecordForTheSpecifiedUPRN()
+        public void ReturnsResidentInformationRecordForTheSpecifiedUPRN()
         {
             var stubbedResidentInfo = _fixture.Create<ResidentVulnerabilitiesApi.V1.Domain.ResidentInformation>();
 
@@ -54,7 +54,7 @@ namespace ResidentVulnerabilitiesApi.Tests.V1.UseCase
         }
 
         [Test]
-        public void IfGatewayReturnsNullThrowNotFoundException()
+        public void IfGatewayReturnsNullObjectReturnedIsNull()
         {
             ResidentVulnerabilitiesApi.V1.Domain.ResidentInformation nullResult = null;
 
