@@ -16,33 +16,33 @@ namespace ResidentVulnerabilitiesApi.V1.Infrastructure
         public DateTime DateCreated { get; set; }
 
         [Column("health_condition_or_disability")]
-        public bool HealthConditionOrDisability { get; set; }
+        public bool? HealthConditionOrDisability { get; set; }
 
         [Column("receives_council_tax_support")]
-        public bool ReceivesCouncilTaxReduction { get; set; }
+        public bool? ReceivesCouncilTaxReduction { get; set; }
 
         [Column("asc_cases")]
         [MaxLength(10)]
-        public int AdultSocialCareCases { get; set; }
+        public int? AdultSocialCareCases { get; set; }
 
         [Column("csc_cases")]
         [MaxLength(10)]
-        public int ChildSocialCareCases { get; set; }
+        public int? ChildSocialCareCases { get; set; }
 
         [Column("living_in_temporary_accomodation")]
-        public bool LivingInTemporaryAccommodation { get; set; }
+        public bool? LivingInTemporaryAccommodation { get; set; }
 
         [Column("low_income")]
-        public bool LowIncome { get; set; }
+        public bool? LowIncome { get; set; }
 
         [Column("child_with_send")]
-        public bool ChildWithSEND { get; set; }
+        public bool? ChildWithSEND { get; set; }
 
         [Column("single_parent")]
-        public bool SingleParent { get; set; }
+        public bool? SingleParent { get; set; }
 
         [Column("learning_disability")]
-        public bool LearningDisability { get; set; }
+        public bool? LearningDisability { get; set; }
 
     }
 }
