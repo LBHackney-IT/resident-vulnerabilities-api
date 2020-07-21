@@ -19,26 +19,13 @@ namespace ResidentVulnerabilitiesApi.V1.Controllers
         }
 
         [HttpGet]
-        [Route("{uprn}")]
-        public IActionResult ViewRecord(string requestUprn)
+        [Route("{requestUprn}")]
+        public IActionResult ViewRecord(long requestUprn)
         {
-            try
-            {
-
-                var uprn = long.Parse(requestUprn);
-                var response = _useCase.Execute(uprn);
-                if (response == null)
-                    return NotFound("No match found.");
-                return Ok(_useCase.Execute(uprn));
-            }
-            catch (FormatException)
-            {
-                return BadRequest("Invalid UPRN format.");
-            }
-            catch (ArgumentNullException)
-            {
-                return BadRequest("Invalid UPRN format.");
-            }
+            var response = _useCase.Execute(requestUprn);
+            if (response == null)
+                return NotFound("No match found.");
+            return Ok(response);
         }
     }
 }
