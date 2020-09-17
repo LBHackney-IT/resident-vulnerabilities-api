@@ -1,6 +1,7 @@
-# LBH Base API
+# LBH Resident Vulnerabilities API
 
-Base API is a boilerplate code for being reused for new APIs for LBH
+Resident Vulnerabilities API retrieves vulnerability data from Qlik 
+There are two GET endpoints one which provides all the data and one for a specific ID 
 
 ## Stack
 
